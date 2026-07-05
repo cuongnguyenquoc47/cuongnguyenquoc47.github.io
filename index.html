@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cuong Nguyen Quoc | Software Engineer</title>
+        <meta
+            name="description"
+            content="Portfolio of Cuong Nguyen Quoc — Software Engineer with 4+ years building scalable web applications and microservices platforms with .NET Core, Golang, and cloud-native technologies."
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- Apply saved theme early to avoid a flash of the wrong theme -->
+        <script>
+            (function () {
+                try {
+                    if (localStorage.getItem("theme") === "light") {
+                        document.documentElement.classList.add("light-mode");
+                    }
+                } catch (e) {}
+            })();
+        </script>
+
+        <!-- Icons -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
+    <body>
+        <!-- THREE.JS ANIMATED BACKGROUND -->
+        <canvas id="bg-canvas"></canvas>
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <button class="navbar-link active" data-nav-link="about">
+                        <ion-icon name="person-outline"></ion-icon
+                        ><span>About</span>
+                    </button>
+                </li>
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link="skills">
+                        <ion-icon name="construct-outline"></ion-icon
+                        ><span>Skills</span>
+                    </button>
+                </li>
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link="projects">
+                        <ion-icon name="briefcase-outline"></ion-icon
+                        ><span>Projects</span>
+                    </button>
+                </li>
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link="resume">
+                        <ion-icon name="document-text-outline"></ion-icon
+                        ><span>Resume</span>
+                    </button>
+                </li>
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link="contact">
+                        <ion-icon name="mail-outline"></ion-icon
+                        ><span>Contact</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- THEME TOGGLE -->
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            title="Toggle light / dark mode"
+            aria-label="Toggle light / dark mode"
+        >
+            <ion-icon name="moon-outline" class="theme-icon-dark"></ion-icon>
+            <ion-icon name="sunny-outline" class="theme-icon-light"></ion-icon>
+        </button>
+
+        <main>
+            <!-- SIDEBAR -->
+            <aside class="sidebar" data-sidebar>
+                <div class="sidebar-info">
+                    <figure class="avatar-box">
+                        <img
+                            src="./assets/download.png"
+                            alt="Profile Photo"
+                            width="80"
+                        />
+                    </figure>
+                    <div class="info-content">
+                        <h1 class="name" title="Cuong Nguyen">Cuong.Nguyen</h1>
+                        <p class="title">Software Engineer</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-info_more">
+                    <div class="separator"></div>
+                    <ul class="contacts-list">
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </div>
+                            <div class="contact-info">
+                                <p class="contact-title">Email</p>
+                                <a
+                                    href="mailto:martin.nguyen477@gmail.com"
+                                    class="contact-link"
+                                    >martin.nguyen477@gmail.com</a
+                                >
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <ion-icon
+                                    name="phone-portrait-outline"
+                                ></ion-icon>
+                            </div>
+                            <div class="contact-info">
+                                <p class="contact-title">Phone</p>
+                                <a href="tel:+84377077630" class="contact-link"
+                                    >+84 377 077 630</a
+                                >
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <ion-icon name="location-outline"></ion-icon>
+                            </div>
+                            <div class="contact-info">
+                                <p class="contact-title">Location</p>
+                                <address>Ho Chi Minh City, VietNam</address>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="separator"></div>
+                    <ul class="social-list">
+                        <li class="social-item">
+                            <a
+                                href="https://github.com/cuongnguyenquoc47"
+                                class="social-link"
+                                target="_blank"
+                            >
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a
+                                href="https://www.linkedin.com/in/cuong.nguyen47/"
+                                class="social-link"
+                                target="_blank"
+                            >
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a
+                                href="https://www.facebook.com/cuong.nguyenquoc47"
+                                class="social-link"
+                                target="_blank"
+                            >
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a
+                                href="https://www.instagram.com/mystogancn"
+                                class="social-link"
+                                target="_blank"
+                            >
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="info_more-btn" data-sidebar-btn>
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <div class="main-content">
+                <!-- ABOUT -->
+                <article class="about active" data-page="about">
+                    <header>
+                        <h2 class="h2 article-title">About me</h2>
+                    </header>
+                    <section class="about-text">
+                        <p>
+                            Senior Full Stack Software Engineer with 5+ years of
+                            experience designing and developing enterprise
+                            applications across
+                            <strong
+                                >E-commerce, Retail, F&amp;B, and Financial
+                                Services</strong
+                            >
+                            domains.
+                        </p>
+                        <p>
+                            Strong expertise in <strong>.NET/C#</strong>,
+                            <strong>React</strong>, <strong>Next.js</strong>,
+                            <strong>TypeScript</strong>,
+                            <strong>PostgreSQL</strong>, <strong>Redis</strong>,
+                            <strong>Docker</strong>,
+                            <strong>Kubernetes</strong>, and modern cloud-native
+                            architectures. Experienced in building scalable
+                            backend services, responsive frontend applications,
+                            microservices, distributed systems, and enterprise
+                            integrations.
+                        </p>
+                        <p>
+                            Currently expanding expertise in
+                            <strong>Golang</strong>, <strong>Python</strong>,
+                            <strong>NestJS</strong>,
+                            <strong>AI Engineering</strong>,
+                            <strong>LLM integration</strong>,
+                            <strong>RAG</strong>,
+                            <strong>Enterprise Architecture</strong>, and
+                            <strong>Digital Transformation</strong> to build
+                            intelligent enterprise solutions.
+                        </p>
+                        <p>
+                            Passionate about solving business problems through
+                            technology and continuously growing toward Lead
+                            Engineer, Solution Architect, and Engineering
+                            Management roles.
+                        </p>
+                    </section>
+
+                    <section class="service">
+                        <h3 class="h3 service-title">What i'm doing</h3>
+                        <ul class="service-list">
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <ion-icon
+                                        name="server-outline"
+                                        size="large"
+                                        style="
+                                            color: var(--orange-yellow-crayola);
+                                        "
+                                    ></ion-icon>
+                                </div>
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        Backend Development
+                                    </h4>
+                                    <p class="service-item-text">
+                                        Building robust, high-performance
+                                        backend systems with .NET Core, Golang,
+                                        and TypeScript.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <ion-icon
+                                        name="git-network-outline"
+                                        size="large"
+                                        style="
+                                            color: var(--orange-yellow-crayola);
+                                        "
+                                    ></ion-icon>
+                                </div>
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        Microservices Architecture
+                                    </h4>
+                                    <p class="service-item-text">
+                                        Designing scalable, event-driven systems
+                                        with Clean Architecture, CQRS, gRPC, and
+                                        Dapr.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <ion-icon
+                                        name="cloud-outline"
+                                        size="large"
+                                        style="
+                                            color: var(--orange-yellow-crayola);
+                                        "
+                                    ></ion-icon>
+                                </div>
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        Cloud & DevOps
+                                    </h4>
+                                    <p class="service-item-text">
+                                        Deploying on AWS with Docker,
+                                        Kubernetes, and GitOps CI/CD pipelines
+                                        using ArgoCD and Jenkins.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <ion-icon
+                                        name="analytics-outline"
+                                        size="large"
+                                        style="
+                                            color: var(--orange-yellow-crayola);
+                                        "
+                                    ></ion-icon>
+                                </div>
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        Database & Performance
+                                    </h4>
+                                    <p class="service-item-text">
+                                        Optimizing PostgreSQL and SQL Server
+                                        with indexing, query tuning, and caching
+                                        strategies.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <!-- SKILLS -->
+                <article class="skills" data-page="skills">
+                    <header>
+                        <h2 class="h2 article-title">My Skills</h2>
+                    </header>
+
+                    <section class="skill">
+                        <h3 class="h3 service-title">Technologies</h3>
+                        <ul class="skills-list">
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                                        alt="C#"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">C#</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+                                        alt=".NET Core"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">.NET Core</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+                                        alt="Golang"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Golang</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                                        alt="TypeScript"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">TypeScript</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                                        alt="Next.js"
+                                        width="40"
+                                        class="icon-invert"
+                                    />
+                                </div>
+                                <p class="skills-name">Next.js</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                                        alt="Angular"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Angular</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
+                                        alt="NestJS"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">NestJS</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                        alt="Docker"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Docker</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                                        alt="Kubernetes"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Kubernetes</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+                                        alt="AWS"
+                                        width="40"
+                                        class="icon-invert"
+                                    />
+                                </div>
+                                <p class="skills-name">AWS</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                                        alt="PostgreSQL"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">PostgreSQL</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg"
+                                        alt="SQL Server"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">SQL Server</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+                                        alt="Redis"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Redis</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg"
+                                        alt="RabbitMQ"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">RabbitMQ</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg"
+                                        alt="Kafka"
+                                        width="40"
+                                        class="icon-invert"
+                                    />
+                                </div>
+                                <p class="skills-name">Kafka</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg"
+                                        alt="Grafana"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Grafana</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                        alt="Git"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Git</p>
+                            </li>
+                            <li class="skills-item">
+                                <div class="skills-icon">
+                                    <img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                                        alt="Linux"
+                                        width="40"
+                                    />
+                                </div>
+                                <p class="skills-name">Linux</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="skill">
+                        <h3 class="h3 service-title">Core Competencies</h3>
+                        <ul class="service-list">
+                            <li class="service-item">
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        Architecture & Patterns
+                                    </h4>
+                                    <p class="service-item-text">
+                                        Clean Architecture, CQRS, Microservices,
+                                        Event-driven Architecture, Design
+                                        Patterns, SOLID, OOP.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="service-item">
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        APIs & Communication
+                                    </h4>
+                                    <p class="service-item-text">
+                                        RESTful APIs, gRPC, Minimal APIs,
+                                        Identity Server 4, Dapr, RabbitMQ,
+                                        Redis.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="service-item">
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        CI/CD & Monitoring
+                                    </h4>
+                                    <p class="service-item-text">
+                                        Jenkins, ArgoCD GitOps, Bitbucket
+                                        Pipelines, SigNoz, Grafana, Prometheus,
+                                        Zipkin, ELK.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="service-item">
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">
+                                        Database & ORM
+                                    </h4>
+                                    <p class="service-item-text">
+                                        Entity Framework, Dapper, GORM,
+                                        Normalization, Indexing, Stored
+                                        Procedures, Query Optimization.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <!-- PROJECTS -->
+                <article class="projects" data-page="projects">
+                    <header>
+                        <h2 class="h2 article-title">Projects</h2>
+                    </header>
+                    <section class="projects">
+                        <ul class="filter-list">
+                            <li class="filter-item">
+                                <button class="active" data-filter-btn>
+                                    All
+                                </button>
+                            </li>
+                            <li class="filter-item">
+                                <button data-filter-btn>F&B</button>
+                            </li>
+                            <li class="filter-item">
+                                <button data-filter-btn>Retail</button>
+                            </li>
+                            <li class="filter-item">
+                                <button data-filter-btn>Telecom</button>
+                            </li>
+                        </ul>
+
+                        <ul class="project-list">
+                            <li
+                                class="project-item active"
+                                data-filter-item
+                                data-category="f&b"
+                                data-project-desc="A high-volume microservices platform for Popeyes & Domino's Vietnam handling 2,000–4,000 orders daily with 95% uptime and consistent 200ms API response times. Built the TradeZone intelligent order routing system using Google APIs for customer geolocation and automatic order assignment to the nearest stores. Integrated POS systems (Rkeeper, Pulse), payment gateways (MoMo, ZaloPay, ShopeePay), and third-party services, with service discovery orchestrated via Dapr. Established CI/CD pipelines reducing deployment time by 70% and 24/7 observability with SigNoz, Prometheus, Grafana, and Zipkin."
+                                data-project-tech=".NET Core,Entity Framework,Minimal APIs,Identity Server 4,Clean Architecture,Dapr,Quartz,gRPC,Next.js,PostgreSQL,Redis,AWS,Kubernetes,ArgoCD,Jenkins,SigNoz"
+                                data-project-live="https://www.dominos.vn/"
+                            >
+                                <figure
+                                    class="project-img"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            hsl(45, 100%, 60%),
+                                            hsl(0, 60%, 45%)
+                                        );
+                                    "
+                                >
+                                    <img
+                                        src="./assets/Projects/popeyes-dominos.png"
+                                        alt="Popeyes & Domino's Vietnam Platform"
+                                        loading="lazy"
+                                        onerror="this.style.display = 'none'"
+                                    />
+                                </figure>
+                                <div class="project-footer">
+                                    <div class="project-content-wrapper">
+                                        <h3 class="project-title">
+                                            Popeyes &amp; Domino's Vietnam
+                                        </h3>
+                                        <p class="project-category">
+                                            Sales &amp; Operations Platform
+                                        </p>
+                                    </div>
+                                    <div class="project-links">
+                                        <a
+                                            href="https://www.dominos.vn/"
+                                            class="project-link-icon"
+                                            target="_blank"
+                                            title="Live Site"
+                                            onclick="event.stopPropagation()"
+                                            ><ion-icon
+                                                name="link-outline"
+                                            ></ion-icon
+                                        ></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li
+                                class="project-item active"
+                                data-filter-item
+                                data-category="retail"
+                                data-project-desc="A large-scale retail management platform serving 100,000+ retail businesses. Took ownership of core system services — Public API, Internal API, and Built-in API — ensuring stability and performance by proactively fixing production bugs and handling incidents. Optimized complex SQL queries and database access logic to reduce latency, and collaborated on strategic projects such as Multi-Currency, Global Location, and a Dynamic Configuration System. Monitoring and debugging via Elastic Stack (ELK) and Redis."
+                                data-project-tech="C#,.NET Framework,.NET Core,Design Patterns,SQL Server,MongoDB,ServiceStack,REST APIs,RabbitMQ,Redis,Elastic Stack (ELK)"
+                                data-project-live="https://www.kiotviet.vn/"
+                            >
+                                <figure
+                                    class="project-img"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            hsl(210, 90%, 55%),
+                                            hsl(240, 60%, 35%)
+                                        );
+                                    "
+                                >
+                                    <img
+                                        src="./assets/Projects/kiotviet.png"
+                                        alt="KiotViet Retail Platform"
+                                        loading="lazy"
+                                        onerror="this.style.display = 'none'"
+                                    />
+                                </figure>
+                                <div class="project-footer">
+                                    <div class="project-content-wrapper">
+                                        <h3 class="project-title">
+                                            KiotViet Retail Software
+                                        </h3>
+                                        <p class="project-category">
+                                            Retail Management Platform
+                                        </p>
+                                    </div>
+                                    <div class="project-links">
+                                        <a
+                                            href="https://www.kiotviet.vn/"
+                                            class="project-link-icon"
+                                            target="_blank"
+                                            title="Live Site"
+                                            onclick="event.stopPropagation()"
+                                            ><ion-icon
+                                                name="link-outline"
+                                            ></ion-icon
+                                        ></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li
+                                class="project-item active"
+                                data-filter-item
+                                data-category="telecom"
+                                data-project-desc="A large-scale telecom system management platform serving both the Vietnam and Cambodia markets. Analyzed business requirements and adapted system behavior to each country's operational and regulatory needs. Built shared UI layouts and reusable components across modules for consistency, and wrote and optimized complex Oracle stored procedures and SQL queries to handle country-specific telecom logic. Improved system performance through query optimization, resolved legacy logic errors, and provided backend APIs for Mobile App teams and third-party integrations."
+                                data-project-tech="ASP.NET Core,Dapper,Clean Architecture,CQRS,Razor Pages,jQuery,KendoUI,Oracle,Git/GitLab"
+                                data-project-live="https://fpt.vn/"
+                            >
+                                <figure
+                                    class="project-img"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            hsl(28, 90%, 55%),
+                                            hsl(15, 70%, 40%)
+                                        );
+                                    "
+                                >
+                                    <img
+                                        src="./assets/Projects/inside-telecom.png"
+                                        alt="Inside Telecom System Management Platform"
+                                        loading="lazy"
+                                        onerror="this.style.display = 'none'"
+                                    />
+                                </figure>
+                                <div class="project-footer">
+                                    <div class="project-content-wrapper">
+                                        <h3 class="project-title">
+                                            Inside Telecom Management
+                                        </h3>
+                                        <p class="project-category">
+                                            Vietnam &amp; Cambodia Markets
+                                        </p>
+                                    </div>
+                                    <div class="project-links">
+                                        <a
+                                            href="https://fpt.vn/"
+                                            class="project-link-icon"
+                                            target="_blank"
+                                            title="Live Site"
+                                            onclick="event.stopPropagation()"
+                                            ><ion-icon
+                                                name="link-outline"
+                                            ></ion-icon
+                                        ></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <!-- RESUME -->
+                <article class="resume" data-page="resume">
+                    <header class="resume-header">
+                        <h2 class="h2 article-title">Resume</h2>
+                        <div class="resume-actions">
+                            <a
+                                href="./assets/Cuong_Nguyen_Resume.pdf"
+                                target="_blank"
+                                class="download-btn"
+                            >
+                                <ion-icon name="eye-outline"></ion-icon>
+                                <span>View PDF</span>
+                            </a>
+                            <a
+                                href="./assets/Cuong_Nguyen_Resume.pdf"
+                                download="Cuong_Nguyen_Resume.pdf"
+                                class="download-btn"
+                            >
+                                <ion-icon name="download-outline"></ion-icon>
+                                <span>Download</span>
+                            </a>
+                        </div>
+                    </header>
+                    <section class="timeline">
+                        <div class="title-wrapper">
+                            <div class="icon-box">
+                                <ion-icon name="book-outline"></ion-icon>
+                            </div>
+                            <h3 class="h3">Education</h3>
+                        </div>
+                        <ol class="timeline-list">
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">
+                                    Ho Chi Minh City University of Education
+                                </h4>
+                                <span>2018 — 2022</span>
+                                <p class="timeline-text">
+                                    Bachelor of Software Technology <br />
+                                    Ho Chi Minh City, Vietnam <br />
+                                    GPA: 3.33 / 4.0 <br />
+                                    Study Encouragement Scholarship Recipient —
+                                    3 Academic Terms
+                                </p>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="timeline">
+                        <div class="title-wrapper">
+                            <div class="icon-box">
+                                <ion-icon name="briefcase-outline"></ion-icon>
+                            </div>
+                            <h3 class="h3">Experience</h3>
+                        </div>
+                        <ol class="timeline-list">
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">
+                                    Software Engineer — ACFC &amp; VFBS
+                                </h4>
+                                <span>Nov 2023 — Present</span>
+                                <p class="timeline-text">
+                                    Building a high-volume microservices
+                                    platform for Popeyes &amp; Domino's Vietnam
+                                    handling up to 4,000 orders daily. Working
+                                    with .NET Core, Dapr, gRPC, Next.js, and AWS
+                                    Kubernetes with GitOps CI/CD.
+                                </p>
+                            </li>
+
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">
+                                    Junior Software Engineer — KiotViet
+                                </h4>
+                                <span>Mar 2023 — Nov 2023</span>
+                                <p class="timeline-text">
+                                    Owned core API services (Public, Internal,
+                                    Built-in) for a retail platform serving
+                                    100,000+ businesses. Optimized SQL queries,
+                                    handled production incidents, and delivered
+                                    Multi-Currency and Dynamic Configuration
+                                    features.
+                                </p>
+                            </li>
+
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">
+                                    Fresher &amp; Junior Software Engineer — FPT
+                                    Telecom
+                                </h4>
+                                <span>Aug 2021 — Feb 2023</span>
+                                <p class="timeline-text">
+                                    Developed and maintained a telecom system
+                                    management platform for the Vietnam and
+                                    Cambodia markets using ASP.NET Core, Dapper,
+                                    CQRS, and Oracle, with country-specific
+                                    business logic and third-party integrations.
+                                </p>
+                            </li>
+                        </ol>
+                    </section>
+                </article>
+
+                <!-- CONTACT -->
+                <article class="contact" data-page="contact">
+                    <header>
+                        <h2 class="h2 article-title">Contact</h2>
+                    </header>
+
+                    <section class="contact-form">
+                        <h3 class="h3 form-title">Contact Form</h3>
+                        <form
+                            action="https://formspree.io/f/mykopkbb"
+                            method="POST"
+                            class="form"
+                            data-form
+                        >
+                            <div class="input-wrapper">
+                                <input
+                                    type="text"
+                                    name="fullname"
+                                    class="form-input"
+                                    placeholder="Full name"
+                                    required
+                                    data-form-input
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="Email address"
+                                    required
+                                    data-form-input
+                                />
+                            </div>
+                            <textarea
+                                name="message"
+                                class="form-input"
+                                placeholder="Your Message"
+                                required
+                                data-form-input
+                            ></textarea>
+                            <button
+                                class="form-btn"
+                                type="submit"
+                                disabled
+                                data-form-btn
+                            >
+                                <ion-icon name="paper-plane"></ion-icon>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </section>
+
+                    <!--<div class="separator"></div>
+
+                    <section class="contact-social">
+                        <h3 class="h3 form-title">Connect with me</h3>
+                        <ul class="social-list">
+                            <li class="social-item">
+                                <a
+                                    href="https://github.com/cuongnguyenquoc47"
+                                    class="social-link"
+                                    target="_blank"
+                                >
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    <span>GitHub</span>
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a
+                                    href="https://www.linkedin.com/in/cuong.nguyen47/"
+                                    class="social-link"
+                                    target="_blank"
+                                >
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a
+                                    href="https://www.facebook.com/cuong.nguyenquoc47"
+                                    class="social-link"
+                                    target="_blank"
+                                >
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                    <span>Facebook</span>
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a
+                                    href="mailto:martin.nguyen477@gmail.com"
+                                    class="social-link"
+                                >
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <span>Email</span>
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a
+                                    href="https://www.instagram.com/mystogancn"
+                                    class="social-link"
+                                    target="_blank"
+                                >
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                    <span>Instagram</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>-->
+                </article>
+            </div>
+        </main>
+
+        <!-- PROJECT DETAIL MODAL -->
+        <div class="project-modal-overlay" id="projectModal">
+            <div class="project-modal">
+                <button class="project-modal-close" id="projectModalClose">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+                <div class="project-modal-img">
+                    <img id="modalImg" src="" alt="" />
+                </div>
+                <div class="project-modal-body">
+                    <div class="project-modal-header">
+                        <div>
+                            <h3
+                                class="project-modal-title"
+                                id="modalTitle"
+                            ></h3>
+                            <span
+                                class="project-modal-category"
+                                id="modalCategory"
+                            ></span>
+                        </div>
+                    </div>
+                    <div class="project-modal-separator"></div>
+                    <div class="project-modal-section">
+                        <h4 class="project-modal-section-title">
+                            About This Project
+                        </h4>
+                        <p class="project-modal-desc" id="modalDesc"></p>
+                    </div>
+                    <div class="project-modal-section">
+                        <h4 class="project-modal-section-title">Tech Stack</h4>
+                        <div class="project-modal-tech" id="modalTech"></div>
+                    </div>
+                    <div class="project-modal-actions">
+                        <a
+                            href="#"
+                            class="project-modal-btn project-modal-btn-github"
+                            id="modalGithub"
+                            target="_blank"
+                        >
+                            <ion-icon name="logo-github"></ion-icon>
+                            <span>Source Code</span>
+                        </a>
+                        <a
+                            href="#"
+                            class="project-modal-btn project-modal-btn-live"
+                            id="modalLive"
+                            target="_blank"
+                        >
+                            <ion-icon name="link-outline"></ion-icon>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three.js background -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="background.js"></script>
+
+        <script src="script.js"></script>
+    </body>
+</html>
